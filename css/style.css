@@ -1,0 +1,27 @@
+.titleScreen{
+    text-align: center;
+    background-color:#E4D6E3;
+    padding: 100px 0px 100px 0px;
+}
+ul.horizontalList{
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    list-style-type: none;
+}
+ul.horizontalList li{
+    float:left;
+}
+ul.horizontalList li a{
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    background-color: lightgreen;
+}
+ul.horizontalList li a:hover{
+    background-color: mediumseagreen;
+}
+ul.horizontalList li:first-child{
+    border-left: none;
+}
