@@ -1,13 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <title>Bootstrap Theme Company</title>
+  <title>2017 정기 고연전 홈페이지</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+    <script>
+        var selectThis="baseball";
+        function selectEvent(selectObj){
+            selectThis = selectObj.value;
+            document.getElementById('goScore').value = 0;
+            document.getElementById('yoScore').value = 0;
+        }
+        function editScore(){
+            if(selectThis == "baseball"){
+                var score1 = document.getElementById('goScore').value;
+                var score2 = document.getElementById('yoScore').value;
+                document.getElementById('baseballtable1').innerHTML = score1;
+                document.getElementById('baseballtable2').innerHTML = score2;
+                if(score1 > score2){
+                    document.getElementById('baseballtable1').style.color = "crimson";
+                }
+                if(score1 < score2){
+                    document.getElementById('baseballtable2').style.color = "royalBlue";
+                }
+            }
+            if(selectThis == "basketball"){
+                var score1 = document.getElementById('goScore').value;
+                var score2 = document.getElementById('yoScore').value;
+                document.getElementById('basketballtable1').innerHTML = score1;
+                document.getElementById('basketballtable2').innerHTML = score2;
+                if(score1 > score2){
+                    document.getElementById('basketballtable1').style.color = "crimson";
+                }
+                if(score1 < score2){
+                    document.getElementById('basketballtable2').style.color = "royalBlue";
+                }
+            }
+            if(selectThis == "hockey"){
+                var score1 = document.getElementById('goScore').value;
+                var score2 = document.getElementById('yoScore').value;
+                document.getElementById('hockeytable1').innerHTML = score1;
+                document.getElementById('hockeytable2').innerHTML = score2;
+                if(score1 > score2){
+                    document.getElementById('hockeytable1').style.color = "crimson";
+                }
+                if(score1 < score2){
+                    document.getElementById('hockeytable2').style.color = "royalBlue";
+                }
+            }
+            if(selectThis == "rugby"){
+                var score1 = document.getElementById('goScore').value;
+                var score2 = document.getElementById('yoScore').value;
+                document.getElementById('rugbytable1').innerHTML = score1;
+                document.getElementById('rugbytable2').innerHTML = score2;
+                if(score1 > score2){
+                    document.getElementById('rugbytable1').style.color = "crimson";
+                }
+                if(score1 < score2){
+                    document.getElementById('rugbytable2').style.color = "royalBlue";
+                }
+            }
+            if(selectThis == "football"){
+                var score1 = document.getElementById('goScore').value;
+                var score2 = document.getElementById('yoScore').value;
+                document.getElementById('footballtable1').innerHTML = score1;
+                document.getElementById('footballtable2').innerHTML = score2;
+                if(score1 > score2){
+                    document.getElementById('footballtable1').style.color = "crimson";
+                }
+                if(score1 < score2){
+                    document.getElementById('footballtable2').style.color = "royalBlue";
+                }
+            }
+        }
+</script>
 </head>
 <style>
 .jumbotron { 
@@ -123,18 +192,28 @@
 .item span {
     font-style: normal;
 }
+.showNot {
+     display: none;
+}
 </style>
+
 <body body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
     <nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
+        <span class="icon-bar"></span>
+          
       </button>
+        
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+        <input type="radio" name="lang" value="kor" id="kor" onchange="check('kor')">
+            <label for="kr" style="color: #fff; margin-bottom: 0px; padding: 15px 15px 15px 0px;">한국어</label>
+        <input type="radio" name="lang" value="eng" id="eng" onchange="check('eng')">
+            <label for="en" style="color: #fff; margin-bottom: 0px; padding: 15px 15px 15px 0px;">English</label>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#intro">INTRO</a></li>
         <li><a href="#date">DATE &amp; VENUE</a></li>
@@ -149,92 +228,124 @@
   </div>
 </nav>
     <div class="jumbotron text-center">
-        
-        <h1>
+        <div class="langs">
+        <h1 class="kor">
             바야흐로 고연전의 달입니다!</h1>
+        <h1 class="eng">
+            GO-YEON-JEON 2017</h1>
+        </div>
         <br /><br />
-        <p style="margin-bottom: 10px">일시 : 9월 22 ~ 23일</p> 
+        <div class="langs">
+        <p style="margin-bottom: 10px" class="kor">일시 : 9월 22 ~ 23일</p> 
+        <p style="margin-bottom: 10px" class="eng">Due : 9. 22 ~ 23</p> 
+        </div>
     </div>
     <div class="container-fluid bg-grey" align="middle">
     </div>
     <div id="intro" class="container-fluid">
         <div class="container-fluid bg-grey">
-            <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>고연전 정보</strong></p>
+            <div class="langs">
+            <p align="middle" style="font-size: 50px; margin-top: 60px" class="kor"><strong>고연전 정보</strong></p>
+            <p align="middle" style="font-size: 50px; margin-top: 60px" class="eng"><strong>Info of Go-Yeon Jeon</strong></p>
+                
+            </div>
             <div class="row">
                 <div class="col-sm-3" style="margin-left: 30px; margin-right: 20px">
                     <img src="resources/goyeonIntro.jpg" style="width: 100%;"/>
                 </div>
                 <div class="col-sm-8" style="border-radius: 25px; border: 2px solid crimson; padding: 5px 10px 5px 10px;">
-                    <h2>고연전이란?</h2>
-                    <p>연세대학교-고려대학교 정기전은 애교심을 고양하고 연세대학교와 고려대학교 양교의 친선을 도모하기 위한 목적으로 스포츠 경기를 비롯한 강연, 온라인 게임, 사회공헌활동과 같은 다양한 분야에서 승부를 겨루는 행사 일체를 의미한다. 약칭 고연전(高延戰) 또는 연고전(高延戰)으로 불리며, 공식 명칭은 두 학교의 협의에 의해 연세대학교 주최시 '고연전', 고려대학교 주최시 '연고전'으로 결정된다.<br /><br />
+                    <div class="langs">
+                    <h2 class="kor">고연전이란?</h2>
+                    <h2 class="eng">What is 'Go-Yeon Jeon'?</h2>
+                    <p class="kor">연세대학교-고려대학교 정기전은 애교심을 고양하고 연세대학교와 고려대학교 양교의 친선을 도모하기 위한 목적으로 스포츠 경기를 비롯한 강연, 온라인 게임, 사회공헌활동과 같은 다양한 분야에서 승부를 겨루는 행사 일체를 의미한다. 약칭 고연전(高延戰) 또는 연고전(高延戰)으로 불리며, 공식 명칭은 두 학교의 협의에 의해 연세대학교 주최시 '고연전', 고려대학교 주최시 '연고전'으로 결정된다.<br /><br />
                         <i style="color:gainsboro;">출처 : https://ko.wikipedia.org/wiki/고려대학교-연세대학교_정기전</i>
                     </p>
+                    <p class="eng">Hey guys!! Hope you are doing fine. Today’s post is dedicated to event with extra-ordinary name Go-Yeon Jeon. If I translate literally it means war between Korea University(KU) and Yonsei University. Don’t worry kkk the word “war” here is more like “competition”, “rivalry” or “contest” between two top universities in Korea.<br /><br />
+                    </p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="date" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>일정 및 위치</strong></p>
+        <div class="langs">
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="kor"><strong>일정 및 위치</strong></p>
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="eng"><strong>date &amp; place</strong></p>
+        </div>  
         <div class="row">
             <div class="col-sm-3" style="margin-left: 30px; margin-right: 20px">
-                <h2 align="middle" style="margin-top: 10px">시간표</h2>
+                <div class="langs">
+                    <h2 align="middle" style="margin-top: 10px" class="kor">시간표</h2>
+                    <h2 align="middle" style="margin-top: 10px" class="eng">timetable</h2>
+                </div>
                 <table border="1" class="dateTable">
                     <tbody>
                         <tr>
                             <th colspan="3">9월 22일</th>
                         </tr>
                         <tr>
-                            <td id="tableAtt">종목</td>
-                            <td id="tableAtt">시간</td>
-                            <td id="tableAtt">장소</td>
+                            <td id="tableAtt" class="langs"><span class="kor">종목</span><span class="eng">event</span></td>
+                            <td id="tableAtt" class="langs"><span class="kor">시간</span><span class="eng">time</span></td>
+                            <td id="tableAtt" class="langs"><span class="kor">장소</span><span class="eng">place</span></td>
                         </tr>
                         <tr>
-                            <td>개막식</td>
+                            <td class="langs"><span class="kor">개막식</span><span class="eng">open event</span></td>
                             <td>10:00</td>
-                            <td>잠실야구장</td>
+                            <td class="langs"><span class="kor">잠실야구장</span><span class="eng">jamsil baseball stadium</span></td>
                         </tr>
                         <tr>
-                            <td>야구</td>
+                            <td class="langs"><span class="kor">야구</span><span class="eng">baseball</span></td>
                             <td>11:00</td>
-                            <td>잠실야구장</td>
+                            <td class="langs"><span class="kor">잠실야구장</span><span class="eng">jamsil baseball stadium</span></td>
                         </tr>
                         <tr>
-                            <td>농구</td>
+                            <td class="langs"><span class="kor">농구</span><span class="eng">basketball</span></td>
                             <td>15:00</td>
-                            <td>잠실실내체육관</td>
+                            <td class="langs"><span class="kor">잠실실내체육관</span><span class="eng">jamsil indoor gym</span></td>
                         </tr>
                         <tr>
-                            <td>빙구</td>
+                            <td class="langs"><span class="kor">빙구</span><span class="eng">hockey</span></td>
                             <td>17:00</td>
-                            <td>목동빙상장</td>
+                            <td class="langs"><span class="kor">목동빙상장</span><span class="eng">mokdong ice rink</span></td>
                         </tr>
                         <tr>
                             <th colspan="3">9월 23일</th>
                         </tr>
                          <tr>
-                            <td id="tableAtt">종목</td>
-                            <td id="tableAtt">시간</td>
-                            <td id="tableAtt">장소</td>
+                            <td id="tableAtt" class="langs"><span class="kor">종목</span><span class="eng">event</span></td>
+                            <td id="tableAtt" class="langs"><span class="kor">시간</span><span class="eng">time</span></td>
+                            <td id="tableAtt" class="langs"><span class="kor">장소</span><span class="eng">place</span></td>
                         </tr>
                         <tr>
-                            <td>럭비</td>
+                            <td class="langs"><span class="kor">럭비</span><span class="eng">rugby</span></td>
                             <td>11:00</td>
-                            <td>목동주경기장</td>
+                            <td class="langs"><span class="kor">목동주경기장</span><span class="eng">mokdong stadium</span></td>
                         </tr>
                         <tr>
-                            <td>축구</td>
+                            <td class="langs"><span class="kor">축구</span><span class="eng">football</span></td>
                             <td>13:30</td>
-                            <td>목동주경기장</td>
+                            <td class="langs"><span class="kor">목동주경기장</span><span class="eng">mokdong stadium</span></td>
                         </tr>
                     </tbody>
                 </table>
-                <h2 align="middle" style="margin-top: 50px">
+                <div class="langs">
+                <h2 align="middle" style="margin-top: 50px" class="kor">
                     근처 지하철역
                 </h2>
-                <p align="middle">
+                <h2 align="middle" style="margin-top: 50px" class="eng">
+                    Near Subway Station
+                </h2>
+                </div>
+                <div class="langs">
+                <p align="middle" class="kor">
                     잠실야구장, 잠실실내체육관: 종합운동장역<br />
                     목동빙상장, 목동주경기장: 오목교역
                 </p>
+                <p align="middle" class="eng">
+                    jamsil: Sports Complex Station<br />
+                    mokdong: Omokgyo Station
+                </p>
+                </div>
             </div>
             <div class="col-sm-8" style="border-style: solid;">
                 <div id="map">cannot show</div>
@@ -243,163 +354,150 @@
     </div>
     
     <div id="score" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>점수표</strong></p>
-        <strong style="font-size: 18px;">
-                        ※ 지속적으로 업데이트됩니다.
-        </strong>
+        <div class="langs"> 
+            <p align="middle" style="font-size: 50px; margin-top: 60px" class="kor"><strong>점수표</strong></p>
+            <p align="middle" style="font-size: 50px; margin-top: 60px" class="eng"><strong>score</strong></p>
+       </div>
+        <div class="langs"> 
+            <strong style="font-size: 18px;" class="kor">※ 지속적으로 업데이트됩니다.</strong>
+            <strong style="font-size: 18px;" class="eng">※ It will be updated regularly.</strong>
+        </div>
         <p>
             <table class="scoreTable" cellpadding="0.1">
                 <tbody>
                     <tr>
-                        <td rowspan="2" style="text-align:center;">
-                                        <p>연도</p>
+                                    <td colspan="2" style="text-align:center;" class="langs">
+                                        <p class="kor">야구</p>
+                                        <p class="eng">baseball</p>
                                     </td>
-                                    <td colspan="3" style="text-align:center;">
-                                        <p>야구</p>
+                                    <td colspan="2" style="text-align:center;" class="langs">
+                                        <p class="kor">농구</p>
+                                        <p class="eng">basketball</p>
                                     </td>
-                                    <td colspan="3" style="text-align:center;">
-                                        <p>농구</p>
+                                    <td colspan="2" style="text-align:center;" class="langs">
+                                        <p class="kor">빙구</p>
+                                        <p class="eng">hockey</p>
                                     </td>
-                                    <td colspan="3" style="text-align:center;">
-                                        <p>빙구</p>
+                                    <td colspan="2" style="text-align:center;" class="langs">
+                                        <p class="kor">럭비</p>
+                                        <p class="eng">rugby</p>
                                     </td>
-                                    <td colspan="3" style="text-align:center;">
-                                        <p>럭비</p>
-                                    </td>
-                                    <td colspan="3" style="text-align:center;">
-                                        <p>축구</p>
-                                    </td>
-                                    <td colspan="3" style="text-align:center;">
-                                        <p>종합전적</p>
-                                    </td>
-                                    <td rowspan="2" style="text-align:center;">
-                                        <p>최종<br>결과</p>
+                                    <td colspan="2" style="text-align:center;" class="langs">
+                                        <p class="kor">축구</p>
+                                        <p class="eng">football</p>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align:center;">
-                                        <p>고</p>
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">고</p>
+                                        <p class="eng">GO</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>연</p>
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">연</p>
+                                        <p class="eng">YEON</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>결</p>
+                                   
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">고</p>
+                                        <p class="eng">GO</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>고</p>
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">연</p>
+                                        <p class="eng">YEON</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>연</p>
+                                   
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">고</p>
+                                        <p class="eng">GO</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>결</p>
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">연</p>
+                                        <p class="eng">YEON</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>고</p>
+                                    
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">고</p>
+                                        <p class="eng">GO</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>연</p>
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">연</p>
+                                        <p class="eng">YEON</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>결</p>
+                                    
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">고</p>
+                                        <p class="eng">GO</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>고</p>
+                                    <td style="text-align:center;" class="langs">
+                                        <p class="kor">연</p>
+                                        <p class="eng">YEON</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>연</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>결</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>고</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>연</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>결</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>고</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>무</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>연</p>
-                                    </td>
+                                    
                                 </tr>
                                 <tr>
-                                    <td style="text-align:center;">
-                                        <p>2017</p>
+                                    <td style="text-align:center;" >
+                                        <p id="baseballtable1">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="baseballtable2">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="basketballtable1">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p><strong><span style="color:red">-</span></strong></p>
+                                    <td style="text-align:center;" >
+                                        <p id="basketballtable2">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="hockeytable1">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="hockeytable2">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p><strong><span style="color:red">-</span></strong></p>
+                                    <td style="text-align:center;" >
+                                        <p id="rugbytable1">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="rugbytable2">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="footballtable1">-</p>
                                     </td>
-                                    <td style="text-align:center;">
-                                        <p><span style="color:blue">-</span></p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p><span style="color:blue">-</span></p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
-                                    </td>
-                                    <td style="text-align:center;">
-                                        <p>-</p>
+                                    <td style="text-align:center;" >
+                                        <p id="footballtable2">-</p>
                                     </td>
                                 </tr>
                             </tbody>
             </table>
-        </p>
+        <div>
+             
+        </div>
+        <div class="row">
+            <div class="col-sm-7" style="margin-left: 0px; margin-right: 0px">
+                    
+            </div>
+            <div class="col-sm-4" style="margin: 20px 0px 0px 0px; float: right">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <select onchange="selectEvent(this)">
+                <option value="baseball" selected>야구</option>
+                <option value="basketball">농구</option>
+                <option value="hockey">빙구</option>
+                <option value="rugby">럭비</option>
+                <option value="football">축구</option>
+            </select>
+                <strong style="color: crimson">고&nbsp;</strong>
+                <input type="number" id="goScore" min="0" max="300" value="0" style="text-align: right">
+                <strong>&nbsp;:&nbsp;</strong>
+                <input type="number" id="yoScore" min="0" max="300" value="0" style="text-align: right">
+                <strong style="color: royalblue">&nbsp;연&nbsp;&nbsp;&nbsp;</strong>
+                <button type="button" onclick="editScore()">Update It</button>
+            </div>
+        </div>
+        </p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <div id="member" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>올해의 선수들</strong></p>
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="langs">
+            <strong class="kor">올해의 선수들</strong><strong class="eng">This Year's Player</strong>
+        </p>
         <div class="row">
             <div class="col-sm-3" style="margin-left: 60px; margin-right: 20px">
                 <img src="resources/member_baseball.jpg" width="130%" align="middle"/>
@@ -421,12 +519,19 @@
         </div>
     </div>
       <div id="post" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>응원 게시판</strong></p>
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="langs">
+            <strong class="kor">응원 게시판</strong>
+            <strong class="eng">Cheering Post</strong>
+        </p>
         <div class="row">
    <div class="row">
     <div class="col-sm-5" style="margin-left: 40px">
-        <h2>응원의 메세지를 날려주세요!(준비중)</h2>
-        <h4>자신의 메세지가 우측의 전광판에 표시됩니다.</h4>
+        <div class="langs">
+        <h2 class="kor">응원의 메세지를 날려주세요!(준비중)</h2>
+        <h2 class="eng">Send your cheering message!(WIP)</h2>
+        <h4 class="kor">자신의 메세지가 우측의 전광판에 표시됩니다.</h4>
+        <h4 class="eng">your message will be placed to right board.</h4>
+        </div>
         <form>
 <div class="row">
         <div class="col-sm-6 form-group">
@@ -445,7 +550,10 @@
         </form>
     </div>
     <div class="col-sm-6">
-      <h2>응원 메세지</h2>
+     <div class="langs">
+      <h2 align="center" class="kor">응원 메세지</h2>
+      <h2 align="center" class="eng">Cheering Message</h2>
+        </div>
 <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -482,7 +590,10 @@
   </div>
     </div>
     <div id="cheering" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>응원 노래 및 영상</strong></p>
+        <div class="langs">
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="kor"><strong>응원 노래 및 영상</strong></p>
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="eng"><strong>Cheering Song &amp; Dance</strong></p>
+        </div>
         <div class="row">
             <div class="col-sm-3" style="margin-left: 30px; margin-right: 20px">
                 <audio controls>
@@ -552,21 +663,30 @@
     </div>
     
     <div id="party" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>정기전 뒷풀이</strong></p>
+        <div class="langs">
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="kor"><strong>정기전 뒷풀이</strong></p>
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="eng"><strong>Post Game Party</strong></p>
+        </div>
         <div class="row">
                 <div class="col-sm-3" style="margin-left: 30px; margin-right: 20px">
                     <img src="resources/post_game_party.jpg" style="width: 100%;"/>
                 </div>
-                <div class="col-sm-8" style="border-radius: 25px; border: 2px solid crimson; padding: 5px 10px 5px 10px;">
-                    <h2>경기 후에도 신나게 즐기세요!</h2>
-                    <p>금요일, 토요일 저녁 즈음부터 고려대학교 참살이길, 연세대학교 신촌대학로에서 뒷풀이 축제가 열립니다! 학생들을 위한 무료주점도 열리고 있고, 못다한 응원을 할 수 있는 분위기도 마련되어있습니다. 치열한 경기로 나온 아드레날린이 아직 풀리지 않으셨다면 술과 응원과 함께 시원하게 날려버리세요!<br />
+                <div class="col-sm-8 langs" style="border-radius: 25px; border: 2px solid crimson; padding: 5px 10px 5px 10px;">
+                    <h2 class="kor">경기 후에도 신나게 즐기세요!</h2>
+                    <h2 class="eng">Let's enjoy party after contest!</h2>
+                    <p class="kor">금요일, 토요일 저녁 즈음부터 고려대학교 참살이길, 연세대학교 신촌대학로에서 뒷풀이 축제가 열립니다! 학생들을 위한 무료주점도 열리고 있고, 못다한 응원을 할 수 있는 분위기도 마련되어있습니다. 치열한 경기로 나온 아드레날린이 아직 풀리지 않으셨다면 술과 응원과 함께 시원하게 날려버리세요!<br />
+                    </p>
+                    <p class="eng">In friday and Saturday, Party will be held in Chamsali, Sinchon!<br />
                     </p>
                 </div>
             </div>
     </div>
   
      <div id="history" class="container-fluid">
-        <p align="middle" style="font-size: 50px; margin-top: 60px"><strong>역대 점수 기록</strong></p>
+         <div class="langs">
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="kor"><strong>역대 점수 기록</strong></p>
+        <p align="middle" style="font-size: 50px; margin-top: 60px" class="eng"><strong>History of Go-Yeon Jeon</strong></p>
+             </div>
     <table class="wikitable" style="text-align:center;">
 <tbody><tr>
 <th rowspan="2">연도</th>
@@ -1430,6 +1550,7 @@
   <p>This is Footer.</p> 
 </footer>
     <script>
+        
         var map;
         var mapCenter = {lat: 37.517046, lng: 126.969967};
         function initMap() {
@@ -1507,6 +1628,22 @@
     } // End if
   });
 })
+        
+        function check(token) {
+            let langslist = document.body.getElementsByClassName('langs');
+            for(let langsNode of langslist){
+                let langsNodeChild = langsNode.children;
+                for(let bilang of langsNodeChild){
+                    if(bilang.classList.contains(token) && bilang.classList.contains('showNot')){
+                        bilang.classList.remove('showNot');
+                    }
+                    if(!bilang.classList.contains(token) && !bilang.classList.contains('showNot')){
+                        bilang.classList.add('showNot');
+                    }
+                }
+            }
+        }
+        $(document).ready(check('kor'));
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAipEKl-1BNJeS9w91lPHFlrn91feT06HU&callback=initMap">
